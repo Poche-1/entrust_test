@@ -73,7 +73,7 @@ func (car *Car) delete() error {
 
 func (auth *Auth) get(id string) error {
 	var db = newConnect()
-	response, err := db.Query(fmt.Sprintf("SELECT user,user_pass FROM users WHERE user ='%s'", id))
+	response, err := db.Query(fmt.Sprintf("SELECT user,user_pass FROM users WHERE user = '%s'", id))
 	if err != nil {
 		fmt.Println(err)
 		return err
