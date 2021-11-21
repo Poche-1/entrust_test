@@ -11,11 +11,11 @@ $ docker-compose up
 ```
 
 3. Una vez esten levantados los dos contenedores validar la ip del servidor, con el comando:
-*Nota*: Realizar este paso con el fin de ajustar el valor de las constantes en el script de K6
 
 ```bash
 $ docker inspect entrustt | grep "IPAddress"
 ```
+*Nota*: Realizar este paso con el fin de ajustar el valor de las constantes en el script de K6
 
 4. Para ingresar al contenedor mariadb ingresar el siguiente comando
 *Nota: verificar la ip*
