@@ -1,0 +1,6 @@
+--Crrea la base de datos de usuarios
+CREATE TABLE users( id int primary key, user varchar(100) not null, user_pass varchar(100) not null);
+-- inserta el usuario de pruebas
+INSERT INTO users (id,user,user_pass) VALUES (1,'entrust','ZW50cnVzdDpwYXNzMjAyMQ==');
+--Crea la tabla de tipo cars
+CREATE TABLE cars(id varchar(20) primary key,brand varchar(100),model varchar(100),horse_power int);
