@@ -1,6 +1,6 @@
 ## Código fuente test CRUD (Entrust)
 
-Para poder ejecutarlo se deberan realizar los siguientes pasos
+Para ejecutarlo se deberan realizar los siguientes pasos
 
 1. Clonar el repositorio
 
