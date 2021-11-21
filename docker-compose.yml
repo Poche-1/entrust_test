@@ -1,0 +1,43 @@
+version: "3.8"
+services:
+  server:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    container_name: entrustt
+    environment:
+      DB_HOST: "mariadb_host"
+      DB_PORT: "3306"
+      DB_USER: "root"
+      DB_PASS: "p@ss"
+      DB_SCHEMA: "test_go"
+      SERVER_PORT: "8080"
+    ports:
+      - "8080:8080"
+    networks:
+      entrust_net:
+        aliases:
+          - entrust
+  
+  database:
+    build: 
+      context: .
+      dockerfile: mariadb.dockerfile
+    container_name: mariadb_svc
+    environment: 
+      MYSQL_DATABASE: "test_go"
+      MYSQL_ROOT_PASSWORD: "p@ss"
+    volumes: 
+      - ./schemas/:/var/lib/mysql
+    networks: 
+      entrust_net:
+        aliases: 
+          - mariadb_host          
+
+networks:
+  entrust_net:
+    name: entrust_network
+    driver: bridge
+    ipam:
+      driver: default
+  
